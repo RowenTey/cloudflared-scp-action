@@ -1,5 +1,5 @@
-# Cloudflared SSH Remote Command Runner
-A barebones github action that lets you ssh into a server behind a cloudflare tunnel and run a command
+# Cloudflared SCP
+A barebones github action that lets you scp into a server behind a cloudflare tunnel and run a command
 
 ## Usage
 
@@ -14,11 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: connect to remote server
-      uses: npgy/cloudflared-ssh-action@v2.0
+      uses: zgunz42/cloudflared-scp-action
       with:
         host: ${{ vars.HOST }}
         username: ${{ secrets.USERNAME }}
         private_key: ${{ secrets.PRIVKEY }}
         port: ${{ secrets.PORT }}
-        commands: cd repo_dir; git pull; /usr/local/bin/docker compose up --build -d
+        from: repo_dir
+        to: repo_dir
 ```
