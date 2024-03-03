@@ -16,6 +16,10 @@ inputs:
     description: 'SSH private key'
   commands:
     description: 'The commands to run on the remote server'
+  from:
+    description: 'The location of file in job runner'
+  to:
+    description: 'The location in server'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -25,3 +29,5 @@ runs:
     - ${{ inputs.username }}
     - ${{ inputs.private_key }}
     - ${{ inputs.commands }}
+    - ${{ inputs.from }}
+    - ${{ inputs.to }}
