@@ -14,8 +14,6 @@ inputs:
     description: 'SSH username'
   private_key:
     description: 'SSH private key'
-  commands:
-    description: 'The commands to run on the remote server'
   from:
     description: 'The location of file in job runner'
   to:
@@ -28,6 +26,5 @@ runs:
     - ${{ inputs.port }}
     - ${{ inputs.username }}
     - ${{ inputs.private_key }}
-    - ${{ inputs.commands }}
     - ${{ inputs.from }}
     - ${{ inputs.to }}
