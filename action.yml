@@ -1,4 +1,4 @@
-name: 'Cloudflared SSH Run Remote Commands'
+name: 'Cloudflared SCP'
 branding:
   icon: 'terminal'
   color: 'orange'
