@@ -9,4 +9,4 @@ ssh-keyscan $1 >> /root/.ssh/known_hosts
 
 ssh -o StrictHostKeyChecking=no $3@$1
 
-scp -rp -i /root/.ssh/key.pem -P $2 $5 $3@$1:$6
+scp -rp -i /root/.ssh/key.pem $5 $3@$1:$6
