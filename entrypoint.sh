@@ -7,6 +7,4 @@ chmod 600 /root/.ssh/key.pem
 
 ssh-keyscan $1 >> /root/.ssh/known_hosts
 
-ssh -o StrictHostKeyChecking=no $3@$1
-
 scp -rp -i /root/.ssh/key.pem $5 $3@$1:$6
