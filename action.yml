@@ -1,8 +1,8 @@
-name: 'Cloudflared SCP'
+name: 'Cloudflared SCP w. Service Token'
 branding:
   icon: 'terminal'
   color: 'orange'
-description: 'Lets you scp into a server behind a cloudflare tunnel'
+description: 'Lets you SCP into a server behind a Cloudflare Tunnel'
 inputs:
   host:
     description: 'SSH host address'
@@ -15,9 +15,13 @@ inputs:
   private_key:
     description: 'SSH private key'
   from:
-    description: 'The location of file in job runner'
+    description: 'The origin location of file in job runner'
   to:
-    description: 'The location in server'
+    description: 'The destination location in server'
+  service_token_id:
+    description: 'Service token ID for Cloudflare Access'
+  service_token_secret:
+    description: 'Service token secret for Cloudflare Access'
 runs:
   using: 'docker'
   image: 'Dockerfile'
