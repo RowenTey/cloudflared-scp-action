@@ -28,3 +28,5 @@ runs:
     - ${{ inputs.private_key }}
     - ${{ inputs.from }}
     - ${{ inputs.to }}
+    - ${{ inputs.service_token_id }}
+    - ${{ inputs.service_token_secret }}
