@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Transfer file
-      uses: zgunz42/cloudflared-scp-action
+      uses: RowenTey/cloudflared-scp-action
       with:
         host: ${{ vars.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -25,3 +25,6 @@ jobs:
         service_token_id: ${{ secrets.SERVICE_TOKEN_ID }}
         service_token_secret: ${{ secrets.SERVICE_TOKEN_SECRET }}
 ```
+
+## References
+> This github-action is a forked version [this repo](https://github.com/zgunz42/cloudflared-scp-action) and [this upstream repo](https://github.com/and-fm/cloudflared-ssh-action). I give full credit to the original owners and maintainers.
