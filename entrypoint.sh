@@ -14,4 +14,4 @@ chmod 600 /root/.ssh/key.pem
 
 ssh-keyscan $1 >> /root/.ssh/known_hosts
 
-scp -rp -i /root/.ssh/key.pem -o StrictHostKeyChecking=no $5 $3@$1:$6
+scp -rp -i /root/.ssh/key.pem $5 $3@$1:$6
