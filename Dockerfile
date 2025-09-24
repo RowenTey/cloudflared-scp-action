@@ -1,10 +1,12 @@
 FROM alpine:latest
 
-RUN apk update
-RUN apk add openssh
-RUN apk add curl
-RUN curl -L https://github.com/cloudflare/cloudflared/releases/download/2025.9.1/cloudflared-linux-amd64 -o /usr/bin/cloudflared
-RUN chmod +x /usr/bin/cloudflared
+RUN apk update && apk add --no-cache \
+    openssh=10.0_p1-r7 \
+    curl 
+    
+RUN curl -L https://github.com/cloudflare/cloudflared/releases/download/2025.9.1/cloudflared-linux-amd64 -o /usr/bin/cloudflared && \
+    chmod +x /usr/bin/cloudflared
+
 RUN mkdir /root/.ssh
 
 COPY entrypoint.sh /entrypoint.sh
