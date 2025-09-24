@@ -1,7 +1,7 @@
-FROM alpine:latest
+FROM alpine:3.21
 
 RUN apk update && apk add --no-cache \
-    openssh=10.0_p1-r7 \
+    openssh \
     curl 
     
 RUN curl -L https://github.com/cloudflare/cloudflared/releases/download/2025.9.1/cloudflared-linux-amd64 -o /usr/bin/cloudflared && \
